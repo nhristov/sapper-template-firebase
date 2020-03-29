@@ -1,6 +1,6 @@
 {
 	"hosting": {
-		"public": "functions/static",
+		"public": "static",
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
 		"rewrites": [
 			{
