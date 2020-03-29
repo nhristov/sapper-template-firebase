@@ -1,6 +1,8 @@
-# sapper-template-rollup
+# sapper-template-firebase
 
-A modified default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup.
+A modified default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup with Firebase functions.
+
+https://sapper-template-firebase.web.app/
 
 ## Getting started
 
@@ -10,7 +12,7 @@ A modified default [Sapper](https://github.com/sveltejs/sapper) template, availa
 
 ```bash
 # for Rollup with postcss, purgecss, cssnano, tailwindcss and svelte-preprocess
-npx degit "nhristov/sapper-template-rollup" my-app
+npx degit "nhristov/sapper-template-firebase" my-app
 ```
 
 ### Running the project
@@ -18,9 +20,19 @@ npx degit "nhristov/sapper-template-rollup" my-app
 However you get the code, you can install dependencies and run the project in development mode with:
 
 ```bash
-cd my-app
+cd my-app/functions
 npm install # or yarn
 npm run dev
+```
+
+### Deploying on Firebase
+
+Replace `sapper-template-firebase` with your project's name in .firebaserc
+
+```bash
+cd my-app/functions
+npm run build # or yarn
+firebase deploy
 ```
 
 Open up [localhost:3000](http://localhost:3000) and start clicking around.
