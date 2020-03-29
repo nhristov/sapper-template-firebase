@@ -1,0 +1,12 @@
+{
+	"bracketSpacing": true,
+	"semi": true,
+	"singleQuote": true,
+	"svelteAllowShorthand": true,
+	"svelteBracketNewLine": true,
+	"svelteSortOrder": "scripts-styles-markup",
+	"svelteStrictMode": true,
+	"tabWidth": 4,
+	"trailingComma": "es5",
+	"useTabs": true
+}
