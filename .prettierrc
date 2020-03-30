@@ -1,5 +1,7 @@
 {
 	"bracketSpacing": true,
+	"jsxBracketSameLine": true,
+	"jsxSingleQuote": true,
 	"semi": true,
 	"singleQuote": true,
 	"svelteAllowShorthand": true,
