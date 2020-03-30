@@ -8,5 +8,8 @@
 				"function": "ssr"
 			}
 		]
+	},
+	"functions": {
+		"source": "."
 	}
 }
