@@ -32,6 +32,12 @@
 			font-size: 4em;
 		}
 	}
+
+	@screen lg {
+		figure {
+			@apply hidden;
+		}
+	}
 </style>
 
 <svelte:head>
