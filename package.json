@@ -35,12 +35,12 @@
 		"postcss-import": "12.0.1",
 		"postcss-load-config": "2.1.0",
 		"postcss-url": "8.0.0",
-		"rollup": "2.8.2",
+		"rollup": "2.9.1",
 		"rollup-plugin-svelte": "5.2.1",
 		"rollup-plugin-terser": "5.3.0",
 		"sapper": "0.27.12",
 		"svelte": "3.22.2",
 		"svelte-preprocess": "3.7.4",
-		"tailwindcss": "1.4.5"
+		"tailwindcss": "1.4.6"
 	}
 }
