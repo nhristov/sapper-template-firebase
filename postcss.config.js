@@ -10,24 +10,10 @@ module.exports = {
 		!dev &&
 			require("@fullhuman/postcss-purgecss")({
 				content: ["./src/**/*.svelte", "./src/**/*.html"],
-				defaultExtractor: (content) => {
-					let matching = [];
-
-					const regulars = content.match(/[\w-/:%]+(?<!:)/g);
-					const classDirectives = content.match(
-						/(?<=class:)[\w-/:%]+(?<!:)/g
-					);
-
-					if (regulars) {
-						matching.push(...regulars);
-					}
-
-					if (classDirectives) {
-						matching.push(...classDirectives);
-					}
-
-					return matching;
-				},
+				defaultExtractor: (content) =>
+					[...content.matchAll(/(?:class:)*([\w\d-/:%.]+)/gm)].map(
+						([_match, group, ..._rest]) => group
+					),
 			}),
 		!dev && require("cssnano")({ preset: "default" }),
 	],
