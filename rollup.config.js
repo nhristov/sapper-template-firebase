@@ -72,6 +72,7 @@ export default {
 				}),
 		],
 
+		preserveEntrySignatures: false,
 		onwarn,
 	},
 
@@ -98,6 +99,7 @@ export default {
 				Object.keys(process.binding("natives"))
 		),
 
+		preserveEntrySignatures: "strict",
 		onwarn,
 	},
 
@@ -114,6 +116,7 @@ export default {
 			!dev && terser(),
 		],
 
+		preserveEntrySignatures: false,
 		onwarn,
 	},
 };
