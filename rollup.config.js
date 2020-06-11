@@ -2,14 +2,12 @@ import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import commonjs from "@rollup/plugin-commonjs";
 import svelte from "rollup-plugin-svelte";
-import babel from "rollup-plugin-babel";
+import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 
 import getPreprocessor from "svelte-preprocess";
-import path from "path";
-import postcss from "rollup-plugin-postcss";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -20,28 +18,8 @@ const onwarn = (warning, onwarn) =>
 		/[/\\]@sapper[/\\]/.test(warning.message)) ||
 	onwarn(warning);
 
-const postcssPlugins = (purgecss = false) => {
-	return [
-		require("postcss-import")(),
-		require("postcss-url")(),
-		require("tailwindcss")("./tailwind.config.js"),
-		require("autoprefixer")(),
-		purgecss &&
-			require("@fullhuman/postcss-purgecss")({
-				content: ["./src/**/*.svelte", "./src/**/*.html"],
-				defaultExtractor: (content) =>
-					content.match(/[A-Za-z0-9-_:/]+/g) || [],
-			}),
-		!dev && require("cssnano")({ preset: "default" }),
-	].filter(Boolean);
-};
-
 const preprocess = getPreprocessor({
-	transformers: {
-		postcss: {
-			plugins: postcssPlugins(),
-		},
-	},
+	postcss: true,
 });
 
 export default {
@@ -56,7 +34,6 @@ export default {
 			svelte({
 				dev,
 				hydratable: true,
-				emitCss: true,
 				preprocess,
 			}),
 			resolve({
@@ -68,7 +45,7 @@ export default {
 			legacy &&
 				babel({
 					extensions: [".js", ".mjs", ".html", ".svelte"],
-					runtimeHelpers: true,
+					babelHelpers: "runtime",
 					exclude: ["node_modules/@babel/**"],
 					presets: [
 						[
@@ -95,6 +72,7 @@ export default {
 				}),
 		],
 
+		preserveEntrySignatures: false,
 		onwarn,
 	},
 
@@ -115,16 +93,13 @@ export default {
 				dedupe: ["svelte"],
 			}),
 			commonjs(),
-			postcss({
-				plugins: postcssPlugins(!dev),
-				extract: path.resolve(__dirname, "./static/global.css"),
-			}),
 		],
 		external: Object.keys(pkg.dependencies).concat(
 			require("module").builtinModules ||
 				Object.keys(process.binding("natives"))
 		),
 
+		preserveEntrySignatures: "strict",
 		onwarn,
 	},
 
@@ -141,6 +116,7 @@ export default {
 			!dev && terser(),
 		],
 
+		preserveEntrySignatures: false,
 		onwarn,
 	},
 };
