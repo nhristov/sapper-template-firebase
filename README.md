@@ -1,6 +1,6 @@
 # sapper-template-firebase
 
-A modified default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup with Firebase functions.
+A modified default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup with Firebase functions based on [sapper-template-rollup](https://github.com/nhristov/sapper-template-rollup).
 
 [Sapper Template with Firebase Demo](https://sapper-template-firebase.web.app/)
 
