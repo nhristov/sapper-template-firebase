@@ -1,4 +1,6 @@
 # sapper-template-firebase
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnhristov%2Fsapper-template-firebase.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnhristov%2Fsapper-template-firebase?ref=badge_shield)
+
 
 A modified default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup with Firebase functions based on [sapper-template-rollup](https://github.com/nhristov/sapper-template-rollup).
 
@@ -103,3 +105,7 @@ npm install -D @sveltejs/svelte-virtual-list
 ## Bugs and feedback
 
 Sapper is in early development, and may have the odd rough edge here and there. Please be vocal over on the [Sapper issue tracker](https://github.com/sveltejs/sapper/issues).
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnhristov%2Fsapper-template-firebase.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnhristov%2Fsapper-template-firebase?ref=badge_large)
