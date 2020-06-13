@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fnhristov%2Fsapper-template-rollup.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fnhristov%2Fsapper-template-rollup?ref=badge_small)
+
 # sapper-template-rollup
 
 A modified default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup.
