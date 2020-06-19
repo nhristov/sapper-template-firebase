@@ -14,7 +14,7 @@
 	"dependencies": {
 		"compression": "1.7.4",
 		"polka": "0.5.2",
-		"sirv": "0.4.6"
+		"sirv": "1.0.1"
 	},
 	"devDependencies": {
 		"@babel/core": "7.10.2",
@@ -22,7 +22,7 @@
 		"@babel/plugin-transform-runtime": "7.10.1",
 		"@babel/preset-env": "7.10.2",
 		"@babel/runtime": "7.10.2",
-		"@fullhuman/postcss-purgecss": "2.2.0",
+		"@fullhuman/postcss-purgecss": "2.3.0",
 		"@rollup/plugin-babel": "5.0.3",
 		"@rollup/plugin-commonjs": "13.0.0",
 		"@rollup/plugin-node-resolve": "8.0.1",
@@ -35,12 +35,12 @@
 		"postcss-import": "12.0.1",
 		"postcss-load-config": "2.1.0",
 		"postcss-url": "8.0.0",
-		"rollup": "2.15.0",
-		"rollup-plugin-svelte": "5.2.2",
+		"rollup": "2.17.1",
+		"rollup-plugin-svelte": "5.2.3",
 		"rollup-plugin-terser": "6.1.0",
-		"sapper": "0.27.13",
-		"svelte": "3.23.1",
-		"svelte-preprocess": "3.9.6",
+		"sapper": "0.27.16",
+		"svelte": "3.23.2",
+		"svelte-preprocess": "3.9.9",
 		"tailwindcss": "1.4.6"
 	}
 }
