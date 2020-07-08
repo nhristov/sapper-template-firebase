@@ -36,6 +36,7 @@
 
 <svelte:head>
 	<title>Sapper project template</title>
+	<meta name="description" content="A modified default Sapper template, available for Rollup with Firebase functions." />
 </svelte:head>
 
 <h1>Great success!</h1>
