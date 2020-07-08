@@ -6,6 +6,8 @@ A modified default [Sapper](https://github.com/sveltejs/sapper) template, availa
 
 [Sapper Template with Firebase Demo](https://sapper-template-firebase.web.app/)
 
+![Imgur](https://i.imgur.com/exDPlJE.png)
+
 ## Getting started
 
 ### Using `degit`
