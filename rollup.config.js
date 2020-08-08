@@ -14,6 +14,7 @@ const dev = mode === "development";
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) =>
+	(warning.code === "MISSING_EXPORT" && /'preload'/.test(warning.message)) ||
 	(warning.code === "CIRCULAR_DEPENDENCY" &&
 		/[/\\]@sapper[/\\]/.test(warning.message)) ||
 	onwarn(warning);
@@ -87,6 +88,7 @@ export default {
 			}),
 			svelte({
 				generate: "ssr",
+				hydratable: true,
 				dev,
 				preprocess,
 			}),
@@ -95,7 +97,9 @@ export default {
 			}),
 			commonjs(),
 		],
-		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
+		external: Object.keys(pkg.dependencies).concat(
+			require("module").builtinModules
+		),
 
 		preserveEntrySignatures: "strict",
 		onwarn,
