@@ -14,7 +14,7 @@
 	"dependencies": {
 		"compression": "1.7.4",
 		"polka": "next",
-		"sirv": "1.0.5"
+		"sirv": "1.0.6"
 	},
 	"devDependencies": {
 		"@babel/core": "7.11.1",
@@ -37,10 +37,10 @@
 		"postcss-url": "8.0.0",
 		"rollup": "2.23.1",
 		"rollup-plugin-svelte": "5.2.3",
-		"rollup-plugin-terser": "6.1.0",
+		"rollup-plugin-terser": "7.0.0",
 		"sapper": "0.28.0",
 		"svelte": "3.24.1",
-		"svelte-preprocess": "4.0.10",
+		"svelte-preprocess": "4.0.11",
 		"tailwindcss": "1.6.2"
 	}
 }
