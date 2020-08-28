@@ -6,7 +6,9 @@ import * as sapper from "@sapper/server";
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === "development";
 
-const main = require.main === module || require.main.filename.match(/__sapper__\/build\/index.js$/);
+const main =
+	require.main === module ||
+	require.main.filename.match(/__sapper__\/build\/index.js$/);
 const local = dev || main;
 
 const expressServer = express().use(
