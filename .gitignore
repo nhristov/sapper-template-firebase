@@ -67,6 +67,5 @@ node_modules/
 # Sapper
 .DS_Store
 /src/node_modules/@sapper/
-/cypress/screenshots/
 /__sapper__/
 package-lock.json
