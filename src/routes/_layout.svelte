@@ -18,7 +18,7 @@
 
 <Stylesheet />
 
-<Nav {segment} />
+<Nav segment="{segment}" />
 
 <main>
 	<slot />
