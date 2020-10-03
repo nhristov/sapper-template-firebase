@@ -12,12 +12,16 @@ A modified default [Sapper](https://github.com/sveltejs/sapper) template, availa
 
 ### Using `degit`
 
-[`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository.
+[`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository. Use either the `rollup` or `webpack` branch in `sapper-template`:
 
 ```bash
 # for Rollup with postcss, purgecss, cssnano, tailwindcss and svelte-preprocess
 npx degit "nhristov/sapper-template-firebase" my-app
 ```
+
+### Using GitHub templates
+
+Alternatively, you can use GitHub's template feature with the [sapper-template-rollup](https://github.com/nhristov/sapper-template-rollup) or [sapper-template-webpack](https://github.com/nhristov/sapper-template-webpack) repositories.
 
 ### Running the project
 
@@ -98,7 +102,7 @@ If your app can't be exported to a static site, you can use the [now-sapper](htt
 
 When using Svelte components installed from npm, such as [@sveltejs/svelte-virtual-list](https://github.com/sveltejs/svelte-virtual-list), Svelte needs the original component source (rather than any precompiled JavaScript that ships with the component). This allows the component to be rendered server-side, and also keeps your client-side app smaller.
 
-Because of that, it's essential that the bundler doesn't treat the package as an _external dependency_. You can either modify the `external` option under `server` in [rollup.config.js](https://github.com/nhristov/sapper-template-firebase/blob/master/rollup.config.js) or the `externals` option in [webpack.config.js](https://github.com/sveltejs/sapper-template-webpack/blob/master/webpack.config.js), or simply install the package to `devDependencies` rather than `dependencies`, which will cause it to get bundled (and therefore compiled) with your app:
+Because of that, it's essential that the bundler doesn't treat the package as an _external dependency_. You can either modify the `external` option under `server` in [rollup.config.js](rollup.config.js) or simply install the package to `devDependencies` rather than `dependencies`, which will cause it to get bundled (and therefore compiled) with your app:
 
 ```bash
 npm install -D @sveltejs/svelte-virtual-list
