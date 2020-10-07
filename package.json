@@ -40,7 +40,7 @@
 		"cross-env": "7.0.2",
 		"cssnano": "4.1.10",
 		"firebase-functions-test": "0.2.2",
-		"firebase-tools": "8.11.2",
+		"firebase-tools": "8.12.0",
 		"postcss": "8.1.1",
 		"postcss-import": "12.0.1",
 		"postcss-load-config": "3.0.0",
