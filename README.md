@@ -21,7 +21,7 @@ Replace `my-app` with the path where you wish to create the project.
 
 ### Using GitHub templates
 
-Alternatively, you can create the new project as a GitHub reposity using GitHub's template feature.
+Alternatively, you can create the new project as a GitHub repository using GitHub's template feature.
 
 Go to either [sapper-template-rollup](https://github.com/nhristov/sapper-template-rollup) or [sapper-template-webpack](https://github.com/sveltejs/sapper-template-webpack) and click on "Use this template" to create a new project repository initialized by the template.
 
@@ -59,19 +59,31 @@ There are three simple rules for naming the files that define your routes:
 
 -   A file called `src/routes/about.svelte` corresponds to the `/about` route. A file called `src/routes/blog/[slug].svelte` corresponds to the `/blog/:slug` route, in which case `params.slug` is available to the route
 -   The file `src/routes/index.svelte` (or `src/routes/index.js`) corresponds to the root of your app. `src/routes/about/index.svelte` is treated the same as `src/routes/about.svelte`.
--   Files and directories with a leading underscore do _not_ create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would _not_ create a `/_helpers/datetime` route
+-   Files and directories with a leading underscore do _not_ create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would _not_ create a `/_helpers/datetime` route.
+
+#### src/node_modules/images
+
+Images added to `src/node_modules/images` can be imported into your code using `import 'images/<filename>'`. They will be given a dynamically generated filename containing a hash, allowing for efficient caching and serving the images on a CDN.
+
+See [`index.svelte`](src/routes/index.svelte) for an example.
+
+#### src/node_modules/@sapper
+
+This directory is managed by Sapper and generated when building. It contains all the code you import from `@sapper` modules.
 
 ### static
 
-The [static](static) directory contains any static assets that should be available. These are served using [sirv](https://github.com/lukeed/sirv).
+The [static](static) directory contains static assets that should be served publicly. Files in this directory will be available directly under the root URL, e.g. an `image.jpg` will be available as `/image.jpg`.
 
-In your [service-worker.js](src/service-worker.js) file, you can import these as `files` from the generated manifest...
+The default [service-worker.js](src/service-worker.js) will preload and cache these files, by retrieving a list of `files` from the generated manifest:
 
 ```js
 import { files } from "@sapper/service-worker";
 ```
 
-...so that you can cache them (though you can choose not to, for example if you don't want to cache very large files).
+If you have static files you do not want to cache, you should exclude them from this list after importing it (and before passing it to `cache.addAll`).
+
+Static files are served using [sirv](https://github.com/lukeed/sirv).
 
 ## Bundler configuration
 
