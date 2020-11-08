@@ -21,7 +21,7 @@
 	"dependencies": {
 		"compression": "1.7.4",
 		"express": "4.17.1",
-		"firebase-admin": "9.2.0",
+		"firebase-admin": "9.3.0",
 		"firebase-functions": "3.11.0",
 		"sirv": "1.0.7"
 	},
@@ -41,8 +41,8 @@
 		"cross-env": "7.0.2",
 		"cssnano": "4.1.10",
 		"firebase-functions-test": "0.2.3",
-		"firebase-tools": "8.14.1",
-		"postcss": "8.1.4",
+		"firebase-tools": "8.15.1",
+		"postcss": "8.1.6",
 		"postcss-import": "13.0.0",
 		"postcss-load-config": "3.0.0",
 		"postcss-url": "10.1.0",
