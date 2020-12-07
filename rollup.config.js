@@ -1,6 +1,8 @@
+import path from "path";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import commonjs from "@rollup/plugin-commonjs";
+import url from "@rollup/plugin-url";
 import svelte from "rollup-plugin-svelte";
 import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
@@ -14,6 +16,7 @@ const dev = mode === "development";
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) =>
+	(warning.code === "MISSING_EXPORT" && /'preload'/.test(warning.message)) ||
 	(warning.code === "CIRCULAR_DEPENDENCY" &&
 		/[/\\]@sapper[/\\]/.test(warning.message)) ||
 	onwarn(warning);
@@ -32,9 +35,16 @@ export default {
 				"process.env.NODE_ENV": JSON.stringify(mode),
 			}),
 			svelte({
-				dev,
-				hydratable: true,
 				preprocess,
+				emitCss: true,
+				compilerOptions: {
+					dev,
+					hydratable: true,
+				},
+			}),
+			url({
+				sourceDir: path.resolve(__dirname, "src/node_modules/images"),
+				publicPath: "/client/",
 			}),
 			resolve({
 				browser: true,
@@ -72,6 +82,7 @@ export default {
 				}),
 		],
 
+		preserveEntrySignatures: false,
 		onwarn,
 	},
 
@@ -84,9 +95,17 @@ export default {
 				"process.env.NODE_ENV": JSON.stringify(mode),
 			}),
 			svelte({
-				generate: "ssr",
-				dev,
 				preprocess,
+				compilerOptions: {
+					dev,
+					generate: "ssr",
+					hydratable: true,
+				},
+			}),
+			url({
+				sourceDir: path.resolve(__dirname, "src/node_modules/images"),
+				publicPath: "/client/",
+				emitFiles: false, // already emitted by client build
 			}),
 			resolve({
 				dedupe: ["svelte"],
@@ -94,10 +113,10 @@ export default {
 			commonjs(),
 		],
 		external: Object.keys(pkg.dependencies).concat(
-			require("module").builtinModules ||
-				Object.keys(process.binding("natives"))
+			require("module").builtinModules
 		),
 
+		preserveEntrySignatures: "strict",
 		onwarn,
 	},
 
@@ -114,6 +133,7 @@ export default {
 			!dev && terser(),
 		],
 
+		preserveEntrySignatures: false,
 		onwarn,
 	},
 };
