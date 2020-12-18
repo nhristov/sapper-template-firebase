@@ -16,7 +16,7 @@ To create a new Sapper project based on Rollup locally, run
 
 ```bash
 # for Rollup with postcss, purgecss, cssnano, tailwindcss and svelte-preprocess
-npx degit "nhristov/sapper-template-firebase" my-app
+npx degit "nhristov/sapper-template-firebase#main" my-app
 ```
 
 [`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository.
