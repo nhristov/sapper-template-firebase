@@ -42,7 +42,7 @@
 		"cssnano": "4.1.10",
 		"firebase-functions-test": "0.2.3",
 		"firebase-tools": "9.1.2",
-		"postcss": "8.2.3",
+		"postcss": "8.2.4",
 		"postcss-import": "14.0.0",
 		"postcss-load-config": "3.0.0",
 		"postcss-url": "10.1.1",
