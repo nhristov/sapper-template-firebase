@@ -53,9 +53,9 @@ npm run build # or yarn
 npm run deploy
 ```
 
-### Firebase hosting
+#### Firebase hosting only
 
-To use only the static export version of Sapper without SSR, replace the contents of [firebase.json](firebase.json) with:
+To use this project without SSR, simply replace the contents of firebase.json with:
 
 ```json
 {
@@ -65,7 +65,7 @@ To use only the static export version of Sapper without SSR, replace the content
 }
 ```
 
-After that execute the following commands:
+and run Sapper with:
 
 ```bash
 cd my-app
@@ -73,7 +73,7 @@ npm run export # or yarn
 npm run deploy:hosting
 ```
 
-For more information on how to configure your hosting only [firebase.json](firebase.json) configuration visit [Full Hosting configuration example](https://firebase.google.com/docs/hosting/full-config#firebase-json_example)
+If you wish to learn more on how to fully configure your firebase.json visit the [Full Hosting configuration example](https://firebase.google.com/docs/hosting/full-config#firebase-json_example)
 
 ## Directory structure
 
