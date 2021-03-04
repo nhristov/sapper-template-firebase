@@ -31,8 +31,11 @@ export default {
 		output: config.client.output(),
 		plugins: [
 			replace({
-				"process.browser": true,
-				"process.env.NODE_ENV": JSON.stringify(mode),
+				preventAssignment: true,
+				values: {
+					"process.browser": true,
+					"process.env.NODE_ENV": JSON.stringify(mode),
+				},
 			}),
 			svelte({
 				preprocess,
@@ -91,8 +94,11 @@ export default {
 		output: config.server.output(),
 		plugins: [
 			replace({
-				"process.browser": false,
-				"process.env.NODE_ENV": JSON.stringify(mode),
+				preventAssignment: true,
+				values: {
+					"process.browser": true,
+					"process.env.NODE_ENV": JSON.stringify(mode),
+				},
 			}),
 			svelte({
 				preprocess,
@@ -115,7 +121,6 @@ export default {
 		external: Object.keys(pkg.dependencies).concat(
 			require("module").builtinModules
 		),
-
 		preserveEntrySignatures: "strict",
 		onwarn,
 	},
@@ -126,13 +131,15 @@ export default {
 		plugins: [
 			resolve(),
 			replace({
-				"process.browser": true,
-				"process.env.NODE_ENV": JSON.stringify(mode),
+				preventAssignment: true,
+				values: {
+					"process.browser": true,
+					"process.env.NODE_ENV": JSON.stringify(mode),
+				},
 			}),
 			commonjs(),
 			!dev && terser(),
 		],
-
 		preserveEntrySignatures: false,
 		onwarn,
 	},
