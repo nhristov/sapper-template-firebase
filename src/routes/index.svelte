@@ -55,6 +55,7 @@
 </figure>
 
 <p>
-	<strong>Try editing this file (src/routes/index.svelte) to test live
-		reloading.</strong>
+	<strong
+		>Try editing this file (src/routes/index.svelte) to test live reloading.</strong
+	>
 </p>
