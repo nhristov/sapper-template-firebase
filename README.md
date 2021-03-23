@@ -11,7 +11,7 @@ A modified default template for setting up a [Sapper](https://github.com/sveltej
 To create a new Sapper project based on Rollup locally, run
 
 ```bash
-# for Rollup with postcss, purgecss, cssnano, tailwindcss and svelte-preprocess
+# for Rollup with postcss, cssnano, tailwindcss and svelte-preprocess
 npx degit "nhristov/sapper-template-rollup#main" my-app
 ```
 
