@@ -5,7 +5,6 @@ module.exports = {
 	plugins: [
 		require("postcss-import")(),
 		require("postcss-url")(),
-		require("@tailwindcss/jit"),
 		require("tailwindcss")("./tailwind.config.js"),
 		require("autoprefixer")(),
 		!dev && require("cssnano")({ preset: "default" }),
