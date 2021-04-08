@@ -1,5 +1,5 @@
 module.exports = {
-	mode: 'jit',
+	mode: "jit",
 	purge: {
 		content: ["./src/**/*.svelte", "./src/**/*.html"],
 		defaultExtractor: (content) =>
