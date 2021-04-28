@@ -21,7 +21,7 @@
 	"dependencies": {
 		"compression": "1.7.4",
 		"express": "4.17.1",
-		"firebase-admin": "9.6.0",
+		"firebase-admin": "9.7.0",
 		"firebase-functions": "3.13.2",
 		"sirv": "1.0.11"
 	},
