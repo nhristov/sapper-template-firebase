@@ -38,7 +38,7 @@
 		"@rollup/plugin-url": "6.0.0",
 		"autoprefixer": "10.2.5",
 		"cross-env": "7.0.3",
-		"cssnano": "5.0.2",
+		"cssnano": "5.0.3",
 		"firebase-functions-test": "0.2.3",
 		"firebase-tools": "9.11.0",
 		"postcss": "8.2.15",
