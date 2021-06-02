@@ -37,6 +37,6 @@
 		"sapper": "0.29.1",
 		"svelte": "3.38.2",
 		"svelte-preprocess": "4.7.3",
-		"tailwindcss": "2.1.2"
+		"tailwindcss": "2.1.4"
 	}
 }
